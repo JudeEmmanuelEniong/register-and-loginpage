@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CCS Sit-in Monitoring System</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- ===== LOGIN PAGE ===== -->
+  <div id="loginPage" class="page active">
+
+    <nav class="navbar">
+      <div class="nav-brand">College of Computer Studies Sit-in Monitoring System</div>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Community ▾</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#" class="active">Login</a></li>
+        <li><a href="#" onclick="showPage('registerPage'); return false;">Register</a></li>
+      </ul>
+    </nav>
+
+    <main class="main-container">
+      <div class="logo-side">
+        <img src="ccs.webp" alt="CCS Logo"/>
+      </div>
+
+      <div class="form-side">
+        <div class="form-card">
+
+          <div class="form-group">
+            <input type="text" id="loginId" class="form-input" placeholder="Enter a valid id number"/>
+            <label for="loginId" class="form-label">ID Number</label>
+          </div>
+
+          <div class="form-group">
+            <input type="password" id="loginPass" class="form-input" placeholder="Enter password"/>
+            <label for="loginPass" class="form-label">Password</label>
+          </div>
+
+          <div class="form-options">
+            <label class="remember-me">
+              <input type="checkbox"/> Remember me
+            </label>
+            <a href="#" class="forgot-link">Forgot password?</a>
+          </div>
+
+          <button class="login-btn">Login</button>
+
+          <p class="register-text">
+            Don't have an account?
+            <a href="#" class="register-link" onclick="showPage('registerPage'); return false;">Register</a>
+          </p>
+
+        </div>
+      </div>
+    </main>
+
+  </div>
+
+
+  <!-- ===== REGISTER PAGE ===== -->
+  <div id="registerPage" class="page">
+
+    <main class="register-wrapper">
+      <div class="register-box">
+
+        <a href="#" class="back-btn" onclick="showPage('loginPage'); return false;">Back</a>
+
+        <h2 class="signup-title">Sign up</h2>
+
+        <div class="register-content">
+
+          <div class="register-form">
+
+            <div class="form-group">
+              <input type="text" id="regId" class="form-input" placeholder=" "/>
+              <label for="regId" class="form-label">ID Number</label>
+            </div>
+
+            <div class="form-group">
+              <input type="text" id="regLast" class="form-input" placeholder=" "/>
+              <label for="regLast" class="form-label">Last Name</label>
+            </div>
+
+            <div class="form-group">
+              <input type="text" id="regFirst" class="form-input" placeholder=" "/>
+              <label for="regFirst" class="form-label">First Name</label>
+            </div>
+
+            <div class="form-group">
+              <input type="text" id="regMiddle" class="form-input" placeholder=" "/>
+              <label for="regMiddle" class="form-label">Middle Name</label>
+            </div>
+
+            <div class="form-group">
+              <input type="number" id="regLevel" class="form-input" value="1" placeholder=" "/>
+              <label for="regLevel" class="form-label">Course Level</label>
+            </div>
+
+            <div class="form-group">
+              <input type="password" id="regPass" class="form-input" placeholder=" "/>
+              <label for="regPass" class="form-label">Password</label>
+            </div>
+
+            <div class="form-group">
+              <input type="password" id="regRepeatPass" class="form-input" placeholder=" "/>
+              <label for="regRepeatPass" class="form-label">Repeat your password</label>
+            </div>
+
+            <div class="form-group">
+              <input type="email" id="regEmail" class="form-input" placeholder=" "/>
+              <label for="regEmail" class="form-label">Email</label>
+            </div>
+
+            <div class="form-group">
+              <input type="text" id="regCourse" class="form-input" value="BSIT" placeholder=" "/>
+              <label for="regCourse" class="form-label">Course</label>
+            </div>
+
+            <div class="form-group">
+              <input type="text" id="regAddress" class="form-input" placeholder=" "/>
+              <label for="regAddress" class="form-label">Address</label>
+            </div>
+
+            <button class="register-btn">Register</button>
+
+          </div>
+
+          <div class="register-illustration">
+            <img src="uc.png"
+                 alt="Sign up illustration"
+                 onerror="this.src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png'"/>
+          </div>
+
+        </div>
+      </div>
+    </main>
+
+  </div>
+
+
+  <script>
+    function showPage(pageId) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      document.getElementById(pageId).classList.add('active');
+    }
+  </script>
+
+</body>
+</html> 

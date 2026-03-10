@@ -1,0 +1,351 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --navy: #1a3a6b;
+  --blue-btn: #1a73e8;
+  --blue-btn-hover: #1558b0;
+  --text-dark: #222;
+  --text-muted: #666;
+  --border: #ccc;
+  --bg: #f4f6f9;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Lato', sans-serif;
+  background-color: var(--bg);
+  color: var(--text-dark);
+}
+
+/* Page switching */
+.page {
+  display: none;
+}
+.page.active {
+  display: block;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+  background-color: var(--navy);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  height: 54px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+
+.nav-brand {
+  color: #fff;
+  font-family: 'Cinzel', serif;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.nav-links li a {
+  color: #d0d8e8;
+  text-decoration: none;
+  font-size: 0.9rem;
+  padding: 6px 14px;
+  border-radius: 4px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+}
+
+/* ===== Login Layout ===== */
+.main-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
+  min-height: calc(100vh - 54px);
+  padding: 40px 60px;
+  background: #fff;
+}
+
+.logo-side img {
+  width: 280px;
+  height: 280px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 16px rgba(0,0,0,0.12));
+}
+
+.form-side {
+  flex: 0 0 auto;
+}
+
+.form-card {
+  background: #fff;
+  padding: 10px 0;
+  width: 380px;
+}
+
+.form-group {
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-input {
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  padding: 13px 14px;
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  background: #fff;
+  width: 100%;
+}
+
+.form-input::placeholder {
+  color: #aaa;
+}
+
+.form-input:focus {
+  border-color: var(--blue-btn);
+  box-shadow: 0 0 0 3px rgba(26,115,232,0.12);
+}
+
+.form-label {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-top: 5px;
+}
+
+.form-options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.remember-me input[type="checkbox"] {
+  width: 15px;
+  height: 15px;
+  accent-color: var(--blue-btn);
+  cursor: pointer;
+}
+
+.forgot-link {
+  font-size: 0.9rem;
+  color: var(--text-dark);
+  text-decoration: none;
+}
+
+.forgot-link:hover {
+  color: var(--blue-btn);
+  text-decoration: underline;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 13px;
+  background-color: var(--blue-btn);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+  box-shadow: 0 2px 8px rgba(26,115,232,0.25);
+}
+
+.login-btn:hover {
+  background-color: var(--blue-btn-hover);
+}
+
+.login-btn:active {
+  transform: scale(0.98);
+}
+
+.register-text {
+  text-align: center;
+  margin-top: 18px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.register-link {
+  color: #e53935;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.register-link:hover {
+  text-decoration: underline;
+}
+
+/* ===== Register Page ===== */
+.register-wrapper {
+  min-height: 100vh;
+  background-color: #e8e8e8;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.register-box {
+  background: #fff;
+  width: 100%;
+  max-width: 860px;
+  border-radius: 8px;
+  padding: 30px 50px 50px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+}
+
+.back-btn {
+  display: inline-block;
+  background-color: #e53935;
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 6px 18px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  transition: background 0.2s;
+}
+
+.back-btn:hover {
+  background-color: #b71c1c;
+}
+
+.signup-title {
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 28px;
+}
+
+.register-content {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.register-form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.register-form .form-group {
+  margin-bottom: 10px;
+}
+
+.register-form .form-input {
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  padding: 8px 10px;
+  font-size: 0.9rem;
+  width: 100%;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.register-form .form-input:focus {
+  border-color: var(--blue-btn);
+  box-shadow: 0 0 0 3px rgba(26,115,232,0.10);
+}
+
+.register-form .form-label {
+  display: block;
+  font-size: 0.78rem;
+  color: #555;
+  margin-top: 4px;
+}
+
+.register-illustration {
+  flex: 0 0 220px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 10px;
+}
+
+.register-illustration img {
+  width: 220px;
+  object-fit: contain;
+}
+
+.register-btn {
+  margin-top: 16px;
+  padding: 10px 36px;
+  background-color: var(--blue-btn);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+  align-self: center;
+}
+
+.register-btn:hover {
+  background-color: var(--blue-btn-hover);
+}
+
+.register-btn:active {
+  transform: scale(0.97);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 720px) {
+  .main-container {
+    flex-direction: column;
+    gap: 32px;
+    padding: 32px 20px;
+  }
+  .form-card {
+    width: 100%;
+    max-width: 380px;
+  }
+  .nav-brand {
+    font-size: 0.65rem;
+  }
+  .register-content {
+    flex-direction: column;
+  }
+  .register-illustration {
+    display: none;
+  }
+  .register-box {
+    padding: 24px 20px 40px;
+  }
+}
